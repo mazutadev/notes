@@ -3,9 +3,21 @@ from note import Note
 
 class Notebook:
     def __init__(self, title: str, desc: str):
-        self._title = title
-        self._desc = desc
+        self._notebook_id = None
+        self.title = title
+        self.desc = desc
         self._notes_list = {}
+
+    @property
+    def notebook_id(self):
+        return self._notebook_id
+
+    @notebook_id.setter
+    def notebook_id(self, value: int):
+        if isinstance(value, int):
+            self._notebook_id = value
+        else:
+            raise ValueError("notebook_id должен быть int")
 
     def add_note(self, note: Note):
         if isinstance(note, Note):
@@ -25,6 +37,6 @@ class Notebook:
         else:
             print("Ошибка удаления, неправильный note_id")
 
-    def print_note(self):
+    def print_notes(self):
         for note_id, note in self._notes_list.items():
             print(f"dict_note_id {note_id} : note_id {note.note_id}\nTitle: {note.title}\nDesc: {note.desc}\n")
