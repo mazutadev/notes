@@ -5,19 +5,15 @@ from deck import Deck
 
 def main() -> None:
 
-    first_deck = Deck()
+    desck = Deck()
 
-    first_notebook = Notebook("Первый блокнот", "Для тестов")
+    notebook = Notebook(10, "Тут будут тестовые заметки")
+    first_note = Note("Моя первая заметка", "Вы этой заметке я буду писать что-то важное!")
 
-    first_deck.add_notebook(first_notebook)
+    desck.add_notebook(notebook)
+    notebook.add_note(first_note)
 
-    first_note = Note("First note", "Note about more Python")
-    second_note = Note("Second note", "Note about more Linux")
-    third_note = Note("Third note", "Note about more Zabbix")
-    forth_note = Note("Fourth note", "Note about more SQL")
 
-    first_notebook.add_note(first_note)
-    first_deck.notebooks_list[0].print_notes()
 
 
 if __name__ == "__main__":

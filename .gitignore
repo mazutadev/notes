@@ -1,3 +1,4 @@
 tests
 .idea/*
 src/__pycache__/
+src/validate/__pycache__/

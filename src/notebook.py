@@ -1,11 +1,16 @@
 from note import Note
+from validate import str_validate
 
 
 class Notebook:
-    def __init__(self, title: str, desc: str):
-        self._notebook_id = None
+
+    title = str_validate.StrValidate(max_length=255)
+    description = str_validate.StrValidate(max_length=255)
+
+    def __init__(self, title: str, description: str):
+        self.notebook_id = 0
         self.title = title
-        self.desc = desc
+        self.description = description
         self._notes_list = {}
 
     @property
