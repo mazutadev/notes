@@ -8,15 +8,15 @@ class Note:
     def __init__(self, title: str, description: str):
         self.title = title
         self.description = description
-        self.note_id = 0
+        self.uid = 0
 
     @property
-    def note_id(self) -> int:
-        return self._note_id
+    def uid(self) -> int:
+        return self._uid
 
-    @note_id.setter
-    def note_id(self, value: int):
+    @uid.setter
+    def uid(self, value: int):
         if isinstance(value, int):
-            self._note_id = value
+            self._uid = value
         else:
             raise ValueError("note_id должен быть int")

@@ -1,19 +1,22 @@
 from note import Note
 from notebook import Notebook
 from deck import Deck
+from note_manager import NoteManager
 
 
 def main() -> None:
 
-    desck = Deck()
+    note_manager = NoteManager()
+    board = Deck()
 
-    notebook = Notebook(10, "Тут будут тестовые заметки")
-    first_note = Note("Моя первая заметка", "Вы этой заметке я буду писать что-то важное!")
+    notebook = Notebook("", "Тут будут тестовые заметки")
 
-    desck.add_notebook(notebook)
-    notebook.add_note(first_note)
+    first_note = Note("Моя первая заметка", "В этой заметке я буду писать что-то важное!")
 
+    note_manager.add(board, notebook)
+    note_manager.add(notebook, first_note)
 
+    print(note_manager.get(notebook, 0).title)
 
 
 if __name__ == "__main__":

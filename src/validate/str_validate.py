@@ -23,7 +23,7 @@ class StrValidate:
         self.name = '_' + name
 
     def __get__(self, instance, owner):
-        getattr(instance, self.name)
+        return getattr(instance, self.name)
 
     def __set__(self, instance, value):
         str_value = self.__type_validate(value)
